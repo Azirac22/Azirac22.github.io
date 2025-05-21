@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>CPU Scheduling Algorithm</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <header> CPU SCHEDULING ALGORITHM </header>
+
+  <div class="container">
+
+    <div class="section">
+      <label for="algorithm"><strong> ୨ৎ Select a Scheduling Algorithm</strong></label><br>
+      <select id="algorithm">
+        <option value="fcfs">First Come First Serve</option>
+        <option value="sjf">Shortest Job First</option>
+        <option value="priority-non">Non-Preemptive Priority</option>
+        <option value="priority-pre">Preemptive Priority</option>
+      </select>
+    </div>
+
+    <div class="section">
+      <label><strong> ୨ৎ Input Jobs, Arrival Time, Burst Time, and Priority:</strong></label>
+      <table id="process-table">
+        <thead>
+          <tr>
+            <th>Jobs</th>
+            <th>Arrival Time</th>
+            <th>Burst Time</th>
+            <th>Priority</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+
+      <div class="buttons">
+        <button onclick="addProcess()">Add</button>
+        <button onclick="deleteLast()">Delete</button>
+        <button onclick="runScheduling()">Proceed</button>
+            </div>
+    </div>
+
+    <div class="section">
+      <strong> ୨ৎ Timeline</strong>
+      <div class="timeline" id="timeline"></div>
+    </div>
+
+    <div class="section">
+      <strong> ୨ৎ Gantt Chart</strong>
+      <div class="gantt-chart" id="gantt-chart"></div>
+    </div>
+
+    <div class="results">
+      <div class="box">
+        <strong> ୨ৎ Turn - around Time</strong><br>
+        <div id="tat-results"></div>
+      </div>
+      <div class="box">
+        <strong> ୨ৎ Waiting Time</strong><br>
+        <div id="wt-results"></div>
+      </div>
+    </div>
+
+    <div class="section cpu-util">
+      <strong> ୨ৎ % of CPU Utilization</strong><br>
+      <p style="font-size: 20px;">
+        <span id="cpu-used">———</span> / <span id="total-time">———</span> × 100 = 
+        <span id="cpu-percent">———</span> %
+      </p>
+    </div>
+
+    <div class="footer">
+  <button onclick="location.reload()">✦ Create Again ✦</button>
+  <button onclick="exitApp()">✦ Exit ✦</button>
+</div>
+
+  <script src="scheduling.js"></script>
+</body>
+</html>
